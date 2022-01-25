@@ -1,11 +1,11 @@
 import Layout from '../components/Layout';
 
-const Index = () => {
+const Github = () => {
 	return (
 		<Layout>
-			<h1>Hello Wolrd</h1>
+			<h1>Github</h1>;
 		</Layout>
 	);
 };
 
-export default Index;
+export default Github;
