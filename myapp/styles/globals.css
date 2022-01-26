@@ -1,5 +1,6 @@
 html,
 body {
+	font-size: 95%;
 	padding: 0;
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
@@ -14,4 +15,38 @@ a {
 
 * {
 	box-sizing: border-box;
+}
+
+:root {
+	--nprogress-bg: #ff5376;
+}
+
+/* Clases personalizadas */
+
+/* Nprogress barra spinner de carga */
+
+#nprogress .bar {
+	background: var(--nprogress-bg);
+}
+
+#nprogress .spinner-icon {
+	width: 21px;
+	height: 21px;
+	border-top-color: var(--nprogress-bg);
+	border-left-color: var(--nprogress-bg);
+}
+
+/* Clases Portfolio */
+.overflow {
+	height: 12rem;
+	overflow: hidden;
+}
+
+.overflow .card-img-top {
+	transform: scale(1);
+	transition: all 0.2s ease-in-out;
+}
+
+.overflow .card-img-top:hover {
+	transform: scale(1.1);
 }

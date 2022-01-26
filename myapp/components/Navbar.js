@@ -1,41 +1,47 @@
 import Link from 'next/link';
 
-const Navbar = () => (
-	<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-		<div className='container'>
-			<Link href='/'>
-				<a class='navbar-brand'>Simple Portfolio</a>
-			</Link>
-			<button
-				class='navbar-toggler'
-				type='button'
-				data-toggle='collapse'
-				data-target='#navbarNav'
-				aria-controls='navbarNav'
-				aria-expanded='false'
-				aria-label='Toggle navigation'
-			>
-				<span class='navbar-toggler-icon'></span>
-			</button>
-			<div class='collapse navbar-collapse d-flex flex-row-reverse' id='navbarNav'>
-				<ul class='navbar-nav'>
-					<Link href='/blog'>
-						<li class='nav-item'>
-							<a class='nav-link'>Blog</a>
+const Navbar = () => {
+	return (
+		<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+			<div className='container'>
+				<Link href='/'>
+					<a className='navbar-brand'>Simple Portfolio</a>
+				</Link>
+				<button
+					className='navbar-toggler'
+					type='button'
+					data-bs-toggle='collapse'
+					data-bs-target='#navbarNav'
+					aria-controls='navbarNav'
+					aria-expanded='false'
+					aria-label='Toggle navigation'
+				>
+					<span className='navbar-toggler-icon'></span>
+				</button>
+				<div className='collapse navbar-collapse' id='navbarNav'>
+					<ul className='navbar-nav ml-auto'>
+						<li className='nav-item'>
+							<Link href='/blog'>
+								<a className='nav-link' aria-current='page'>
+									Blog
+								</a>
+							</Link>
 						</li>
-					</Link>
-					<Link href='/github'>
-						<li class='nav-item'>
-							<a class='nav-link'>Github</a>
+						<li className='nav-item'>
+							<Link href='/github'>
+								<a className='nav-link'>Github</a>
+							</Link>
 						</li>
-					</Link>
-					<li class='nav-item'>
-						<a class='nav-link disabled'>Disabled</a>
-					</li>
-				</ul>
+						<li className='nav-item'>
+							<Link href='/github'>
+								<a className='nav-link disable'>disable</a>
+							</Link>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
-);
+		</nav>
+	);
+};
 
 export default Navbar;
