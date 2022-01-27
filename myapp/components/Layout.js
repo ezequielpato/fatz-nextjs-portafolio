@@ -5,12 +5,12 @@ import NProgress from 'nprogress';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const Layout = ({ children, footer = true, dark = false }) => {
+const Layout = ({ title, children, footer = true, dark = false }) => {
 	const router = useRouter();
 
 	useEffect(() => {
 		const handleRouterChange = (url) => {
-			console.log(url);
+			// console.log(url);
 			NProgress.start();
 		};
 
@@ -24,8 +24,9 @@ const Layout = ({ children, footer = true, dark = false }) => {
 	}, []);
 
 	return (
-		<div className={dark && 'bg-dark'}>
+		<div className={dark && 'bg-dark text-light'}>
 			<Navbar />
+			{title && <h1 className='text-center m-4'>{title}</h1>}
 			<main className='container pb-4'>{children}</main>
 			{footer && <Footer />}
 		</div>

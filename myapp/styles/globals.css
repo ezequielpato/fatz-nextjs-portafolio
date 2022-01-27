@@ -1,16 +1,5 @@
 html,
 body {
-	font-size: 95%;
-	padding: 0;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-	cursor: pointer;
 }
 
 * {
@@ -38,15 +27,39 @@ a {
 
 /* Clases Portfolio */
 .overflow {
-	height: 12rem;
+	height: 13rem;
 	overflow: hidden;
 }
 
-.overflow .card-img-top {
+.card-img-top {
 	transform: scale(1);
 	transition: all 0.2s ease-in-out;
 }
 
-.overflow .card-img-top:hover {
+.card-img-top:hover {
 	transform: scale(1.1);
+}
+
+@media (min-width: 1200px) {
+	.overflow {
+		height: 19rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	.overflow {
+		height: 16rem;
+	}
+}
+
+@media (max-width: 991px) {
+	.overflow {
+		height: 12rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.overflow {
+		height: 18rem;
+	}
 }

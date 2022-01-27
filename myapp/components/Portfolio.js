@@ -12,8 +12,8 @@ const Portfolio = () => {
 						</div>
 
 						{projects.map(({ name, description, image }, i) => (
-							<div className='col-md-4 p-2' key={i}>
-								<div className='card h-100'>
+							<div className='col-md-6 p-2' key={i}>
+								<div className='card'>
 									<div className='overflow'>
 										<img src={image} alt='' className='card-img-top' />
 									</div>

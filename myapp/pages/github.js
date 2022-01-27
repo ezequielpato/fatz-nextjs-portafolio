@@ -1,21 +1,15 @@
 import Layout from '../components/Layout';
 import Error from './_error';
 
-import { config } from '../utils/config';
-
-const footer = config.footer;
-const dark = config.dark;
-
 const Github = ({ user, statusCode }) => {
 	if (statusCode) {
 		return <Error statusCode={statusCode} />;
 	} else {
 		return (
-			<Layout footer={footer} dark={dark}>
-				<div className='row mt-5 mb-5'>
-					<div className='col-md-4 m-auto text-light'>
-						<h1>Descomentar lineas de código, se superó límite de request a API</h1>
-						{/* <div className='card card-body d-flex justify-content-center text-center'>
+			<Layout footer={false} dark title='My Github'>
+				<div className='row mt-5 mb-5 '>
+					<div className='col-md-5 m-auto text-light vh-100'>
+						<div className='card card-body d-flex justify-content-center text-center text-dark'>
 							<h2>{user.name}</h2>
 							<img
 								src={user.avatar_url}
@@ -34,7 +28,7 @@ const Github = ({ user, statusCode }) => {
 							>
 								Go to Github
 							</a>
-						</div> */}
+						</div>
 					</div>
 				</div>
 			</Layout>
@@ -42,18 +36,18 @@ const Github = ({ user, statusCode }) => {
 	}
 };
 
-// export async function getServerSideProps() {
-// 	const res = await fetch('https://api.github.com/users/ezequielpato');
-// 	const data = await res.json();
-// 	const statusCode = res.status > 200 ? res.status : false;
-// 	// console.log(res.status);
-// 	// console.log(data);
-// 	return {
-// 		props: {
-// 			user: data,
-// 			statusCode,
-// 		},
-// 	};
-// }
+export async function getServerSideProps() {
+	const res = await fetch('https://api.github.com/users/ezequielpato');
+	const data = await res.json();
+	const statusCode = res.status > 200 ? res.status : false;
+	// console.log(res.status);
+	// console.log(data);
+	return {
+		props: {
+			user: data,
+			statusCode,
+		},
+	};
+}
 
 export default Github;
