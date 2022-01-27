@@ -5,7 +5,7 @@ import NProgress from 'nprogress';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, footer = true, dark = false }) => {
 	const router = useRouter();
 
 	useEffect(() => {
@@ -24,13 +24,11 @@ const Layout = ({ children }) => {
 	}, []);
 
 	return (
-		<>
+		<div className={dark && 'bg-dark'}>
 			<Navbar />
-
-			<main className='container py-4'>{children}</main>
-
-			<Footer />
-		</>
+			<main className='container pb-4'>{children}</main>
+			{footer && <Footer />}
+		</div>
 	);
 };
 
